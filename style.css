@@ -1,0 +1,99 @@
+:root {
+  --bg: #0f131d;
+  --panel: #1a2232;
+  --panel-soft: #253047;
+  --text: #e6edf8;
+  --muted: #93a4c4;
+  --accent: #26d0ff;
+  --danger: #ff4f6a;
+  --ok: #4cff88;
+  --pixel: 2px;
+}
+
+* { box-sizing: border-box; font-family: "Courier New", monospace; }
+body {
+  margin: 0;
+  background: linear-gradient(#0b0f18, #111827);
+  color: var(--text);
+}
+.game-shell { max-width: 1100px; margin: 0 auto; padding: 16px; }
+header h1 { margin: 0; color: var(--accent); letter-spacing: 2px; }
+header p { margin: 8px 0 16px; color: var(--muted); }
+
+.panel {
+  background: var(--panel);
+  border: var(--pixel) solid #2f3f5c;
+  box-shadow: 0 0 0 var(--pixel) #0a0d13;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+.stat { background: var(--panel-soft); padding: 8px; border: 1px solid #3a4d72; }
+.stat strong { display: block; font-size: 11px; color: var(--muted); }
+
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.tile {
+  background: #27334c;
+  border: 2px solid #3f557a;
+  min-height: 64px;
+  padding: 8px;
+  cursor: pointer;
+}
+.tile:hover, .tile.active { border-color: var(--accent); background: #2f4060; }
+.tile .icon { font-size: 20px; display: block; }
+
+.action-btn {
+  width: 100%;
+  margin-bottom: 8px;
+  background: #26344f;
+  color: var(--text);
+  border: 1px solid #42608b;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+.action-btn:disabled { opacity: .45; cursor: not-allowed; }
+.next-day-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4d6a99;
+  background: #33486c;
+  color: white;
+  cursor: pointer;
+}
+.log {
+  background: #121927;
+  border: 1px solid #2d3e5e;
+  min-height: 140px;
+  max-height: 220px;
+  overflow: auto;
+  padding: 8px;
+}
+.log-entry { margin-bottom: 6px; color: #c8d7f4; }
+
+.bar-wrap { margin: 6px 0; }
+.bar-label { font-size: 12px; color: var(--muted); }
+.bar {
+  height: 10px;
+  background: #0f1624;
+  border: 1px solid #3d4e71;
+  overflow: hidden;
+}
+.fill { height: 100%; }
+.fill.reality { background: var(--ok); }
+.fill.myth { background: var(--accent); }
+.fill.risk { background: var(--danger); }
+
+@media (max-width: 800px) {
+  .main-grid { grid-template-columns: 1fr; }
+}
