@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASS LEVERAGE - Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header>
+      <h1>MASS LEVERAGE</h1>
+      <p>Survie → Cash → Attention → Croyance → Capital → Influence</p>
+    </header>
+
+    <section id="stats" class="panel stats"></section>
+
+    <main class="main-grid">
+      <section class="panel">
+        <h2>Carte</h2>
+        <div id="map" class="map-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2 id="selected-location-title">Actions</h2>
+        <div id="actions"></div>
+        <button id="next-day-btn" class="next-day-btn">Jour suivant</button>
+      </section>
+    </main>
+
+    <section class="panel">
+      <h2>Journal</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
